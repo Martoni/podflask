@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Base de donnée production: {% block title %}{% endblock %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+
+
+        <div id="content">{% block content %}{% endblock %}</div>
+
+
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <!-- sortable table -->
+        <script src="{{url_for('static', filename='js/sorttable.js')}}"></script>
+        <script type="text/javascript">
+            function stopRKey(evt) {
+              var evt = (evt) ? evt : ((event) ? event : null);
+              var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+              if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
+            }
+        </script>
+    </body>
+</html>
